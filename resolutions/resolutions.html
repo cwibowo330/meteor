@@ -1,0 +1,29 @@
+<head>
+  <title>Monthly Resolutions</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Monthly Resolutions</h1>
+
+      <label class="hide-finished">
+        <input type="checkbox" checked="{{hideFinished}}">
+        Hide Finished Resolutions
+      </label>
+
+      {{#if currentUser}}
+      <form class="new-resolution">
+        <input type="text" name="title" placeholder="A new resolution">
+        <input type="submit" value="Submit">
+      </form>
+      {{/if}}
+
+      <ul>
+        {{#each resolutions}}
+          {{> resolution}}
+        {{/each}}
+      </ul>
+      {{> loginButtons}}
+    </header>
+  </div>
+</body>
